@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.example.shell</string>
+        <key>StandardErrorPath</key>
+        <string>/var/root/reverse-shell.error.log</string>
+        <key>StandardOutPath</key>
+        <string>/var/root/reverse-shell.log</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>ssh</string>
+		<string>-NTC</string>
+		<string>-o</string>
+                <string>ServerAliveInterval=60</string>
+		<string>-o</string>
+		<string>ExitOnForwardFailure=yes</string>
+		<string>-i</string>
+		<string>/var/root/.ssh/id_rsa</string>
+		<string>-R</string>
+		<string>2222:localhost:22</string>
+		<string>ssh://c@socrates.tplinkdns.com:65000/</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>KeepAlive</key>
+	<true/>
+</dict>
+</plist>
